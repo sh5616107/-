@@ -94,6 +94,7 @@ def main(page: ft.Page):
                 ft.Text("3. חשוב לטווח ארוך.", text_align=ft.TextAlign.RIGHT),
                 ft.Text("4. הימנע מהשקעות מסוכנות.", text_align=ft.TextAlign.RIGHT),
                 ft.Text("5. עקוב אחרי התשואות שלך.", text_align=ft.TextAlign.RIGHT),
+                ft.Text("6. עקוב אחרי דמי הניהול שנגבים ממך", text_align=ft.TextAlign.RIGHT)
             ],
             alignment=ft.MainAxisAlignment.START,
         ),
@@ -101,14 +102,13 @@ def main(page: ft.Page):
         padding=10,
         border=ft.border.all(2, ft.colors.GREY),
         bgcolor=ft.colors.LIGHT_BLUE_100,
-        width=300
+        width=300,
     )
 
     # הוספת רכיבים לעמוד
     page.add(
         ft.Row(
             [
-                investment_tips,
                 ft.Column(
                     [
                         initial_investment,
@@ -124,10 +124,11 @@ def main(page: ft.Page):
                     alignment=ft.MainAxisAlignment.CENTER,
                     horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                 ),
+                investment_tips,
             ],
             alignment=ft.MainAxisAlignment.CENTER,
-            vertical_alignment=ft.CrossAxisAlignment.CENTER,
-        )
+            vertical_alignment=ft.CrossAxisAlignment.START,
+        ),
     )
 
 ft.app(target=main)
